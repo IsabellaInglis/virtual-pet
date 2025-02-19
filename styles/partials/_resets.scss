@@ -1,0 +1,9 @@
+@use "../partials/typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto;
+}

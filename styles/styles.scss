@@ -1,0 +1,36 @@
+@use "./partials/resets";
+@use "./partials/typography" as *;
+
+.header {
+  text-align: center;
+}
+
+.pet {
+  &__container {
+    width: 10rem;
+    height: 10rem;
+    margin: 5rem auto 0;
+    background-color: rgba(227, 226, 226, 0.696);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &__sprite {
+    width: 3rem;
+  }
+
+  &__btn-container {
+    text-align: center;
+  }
+
+  &__btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(124, 34, 151);
+    margin: 3px;
+  }
+}
