@@ -7,37 +7,43 @@ import {
   energyLevel,
 } from "./pet.js";
 
-const pet = new Pet("blah");
+const errorEl = document.querySelector(".error");
+const form = document.querySelector(".name-form");
 
-const eatBtn = document.querySelector("#food-btn");
-eatBtn.addEventListener("click", pet.eat);
+const startGame = (name) => {
+  const gameEl = document.querySelector("main");
+  const landingEl = document.querySelector(".landing");
+  gameEl.style.display = "block";
+  landingEl.classList.add("landing--hidden");
 
-const drinkBtn = document.querySelector("#water-btn");
-drinkBtn.addEventListener("click", pet.drink);
-
-const playBtn = document.querySelector("#play-btn");
-playBtn.addEventListener("click", pet.play);
-
-const sleepBtn = document.querySelector("#sleep-btn");
-sleepBtn.addEventListener("click", pet.sleep);
-
-export const welcome = (name) => {
   new Typewriter(".info__text", {
     strings: `Say hello to your virtual friend, ${name}`,
     autoStart: true,
     cursor: null,
     delay: 60,
   }).deleteAll();
-};
 
-const errorEl = document.querySelector(".error");
-const form = document.querySelector(".name-form");
+  const pet = new Pet(name);
 
-const startGame = () => {
-  const gameEl = document.querySelector("main");
-  const landingEl = document.querySelector(".landing");
-  gameEl.style.display = "block";
-  landingEl.classList.add("landing--hidden");
+  const eatBtn = document.querySelector("#food-btn");
+  eatBtn.addEventListener("click", () => {
+    pet.eat();
+  });
+
+  const drinkBtn = document.querySelector("#water-btn");
+  drinkBtn.addEventListener("click", () => {
+    pet.drink();
+  });
+
+  const playBtn = document.querySelector("#play-btn");
+  playBtn.addEventListener("click", () => {
+    pet.play();
+  });
+
+  const sleepBtn = document.querySelector("#sleep-btn");
+  sleepBtn.addEventListener("click", () => {
+    pet.sleep();
+  });
 };
 
 form.addEventListener("submit", (event) => {
@@ -46,8 +52,7 @@ form.addEventListener("submit", (event) => {
   if (name.length === 0) {
     errorEl.innerText = "Please enter a name";
   } else {
-    startGame();
-    welcome(name);
+    startGame(name);
   }
 });
 

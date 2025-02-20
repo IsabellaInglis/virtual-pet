@@ -54,6 +54,7 @@ export class Pet {
 
   eat() {
     let currentHunger = parseInt(foodLevel.innerText);
+    console.log(this);
     if (currentHunger === 10) {
       const notHungry = `${this.name} is not hungry!`;
       showText(notHungry);

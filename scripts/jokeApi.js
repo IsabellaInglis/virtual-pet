@@ -9,7 +9,6 @@ export const getJoke = async () => {
       "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
     );
 
-    console.log(joke.data.joke);
     showJoke(joke.data.joke);
   } catch (error) {
     console.log(error);
