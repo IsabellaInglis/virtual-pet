@@ -21,14 +21,35 @@ playBtn.addEventListener("click", pet.play);
 const sleepBtn = document.querySelector("#sleep-btn");
 sleepBtn.addEventListener("click", pet.sleep);
 
-const welcome = (text) => {
+export const welcome = (name) => {
   new Typewriter(".info__text", {
-    strings: text,
+    strings: `Say hello to your virtual friend, ${name}`,
     autoStart: true,
     cursor: null,
     delay: 60,
   }).deleteAll();
 };
+
+const errorEl = document.querySelector(".error");
+const form = document.querySelector(".name-form");
+
+const startGame = () => {
+  const gameEl = document.querySelector("main");
+  const landingEl = document.querySelector(".landing");
+  gameEl.style.display = "block";
+  landingEl.classList.add("landing--hidden");
+};
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = event.target.name.value;
+  if (name.length === 0) {
+    errorEl.innerText = "Please enter a name";
+  } else {
+    startGame();
+    welcome(name);
+  }
+});
 
 const healthScore = (healthLevels) => {
   setInterval(() => {
@@ -45,4 +66,3 @@ const healthScore = (healthLevels) => {
 };
 
 // healthScore(healthLevels);
-welcome("hello");
