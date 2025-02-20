@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./scripts/jokeApi.js" type="module" defer></script>
     <script src="./scripts/pet.js" type="module" defer></script>
     <script src="./scripts/script.js" type="module" defer></script>
     <link rel="stylesheet" href="./styles/styles.css" />
@@ -11,6 +14,9 @@
   <body>
     <header class="header"><h1>Virtual Pet</h1></header>
     <main class="main">
+      <div class="info__wrapper">
+        <p class="info__text"></p>
+      </div>
       <section class="pet">
         <div class="pet__container">
           <img
@@ -20,14 +26,37 @@
           />
         </div>
         <div class="pet__btn-container">
-          <label for="food-btn"></label>
-          <button class="pet__btn" id="food-btn"></button>
-          <label for="water-btn"></label>
-          <button class="pet__btn" id="water-btn"></button>
-          <label for="play-btn"></label>
-          <button class="pet__btn" id="play-btn"></button>
-          <label for="sleep-btn"></label>
-          <button class="pet__btn" id="sleep-btn"></button>
+          <div class="pet__btn-wrapper">
+            <button class="pet__btn" id="food-btn"></button>
+            <p class="pet__btn-text" for="food-btn">Food</p>
+          </div>
+          <div class="pet__btn-wrapper">
+            <button class="pet__btn" id="water-btn"></button>
+            <p class="pet__btn-text" or="water-btn">Drink</p>
+          </div>
+          <div class="pet__btn-wrapper">
+            <button class="pet__btn" id="play-btn"></button>
+            <p class="pet__btn-text" for="play-btn">Play</p>
+          </div>
+          <div class="pet__btn-wrapper">
+            <button class="pet__btn" id="sleep-btn"></button>
+            <p class="pet__btn-text" for="sleep-btn">Sleep</p>
+          </div>
+        </div>
+        <div class="pet__health-container">
+          <div class="pet__health-levels">
+            Food: <span><span class="pet__food-level">10</span>/10</span>
+          </div>
+          <div class="pet__health-levels">
+            Hydration: <span><span class="pet__water-level">10</span>/10</span>
+          </div>
+          <div class="pet__health-levels">
+            Happiness:
+            <span><span class="pet__happiness-level">10</span>/10</span>
+          </div>
+          <div class="pet__health-levels">
+            Energy: <span><span class="pet__energy-level">10</span>/10</span>
+          </div>
         </div>
       </section>
     </main>

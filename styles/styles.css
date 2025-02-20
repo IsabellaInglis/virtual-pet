@@ -26,6 +26,16 @@
 
 .header {
   text-align: center;
+  padding: 1rem 0;
+  background: pink;
+}
+
+.info__wrapper {
+  padding: 3rem;
+}
+
+.info__text {
+  text-align: center;
 }
 
 .pet__container {
@@ -37,18 +47,46 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  border-style: inset;
 }
 .pet__sprite {
   width: 3rem;
 }
 .pet__btn-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.pet__btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
 }
 .pet__btn {
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
   border: none;
   background-color: rgb(124, 34, 151);
   margin: 3px;
+}
+.pet__health-container {
+  display: flex;
+  margin: 3rem;
+  justify-content: center;
+}
+.pet__health-levels {
+  margin: 1rem;
+}
+
+.landing__text-wrapper {
+  width: 50rem;
+  height: 20rem;
+  margin: 5rem auto 0;
+  background-color: rgba(227, 226, 226, 0.696);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }/*# sourceMappingURL=styles.css.map */
