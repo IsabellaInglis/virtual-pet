@@ -1,7 +1,7 @@
 import { getJoke } from "./jokeApi.js";
 
 const pet = document.querySelector(".pet__sprite");
-export const healthLevels = [5, 5, 5, 5];
+export const healthLevels = [10, 10, 10, 10];
 export const foodLevel = document.querySelector(".pet__food-level");
 export const waterLevel = document.querySelector(".pet__water-level");
 export const happinessLevel = document.querySelector(".pet__happiness-level");
@@ -21,23 +21,25 @@ const showText = (text) => {
   }).deleteAll();
 };
 
+let lastTimeoutId;
+
 const changeImg = (name, action) => {
   if (action === "happy") {
-    clearTimeout;
+    clearTimeout(lastTimeoutId);
     getJoke();
     setTimeout(() => {
       pet.src = `../assets/gifs/${action}.gif`;
     }, 3000);
-    setTimeout(() => {
+    lastTimeoutId = setTimeout(() => {
       pet.src = "../assets/gifs/default.gif";
       const text = `${name} loved your joke!`;
       showText(text);
     }, 3000);
   } else {
-    clearTimeout;
+    clearTimeout(lastTimeoutId);
     pet.src = `../assets/gifs/${action}.gif`;
 
-    setTimeout(() => {
+    lastTimeoutId = setTimeout(() => {
       pet.src = "../assets/gifs/default.gif";
     }, 2000);
   }
@@ -62,8 +64,9 @@ export class Pet {
       const hungry = `${this.name} is eating!`;
       showText(hungry);
       this.hungerLevel = currentHunger + 3;
-      if (this.foodLevel > 10) {
+      if (this.hungerLevel > 10) {
         foodLevel.innerText = 10;
+        changeImg(this.name, "eating");
       } else {
         foodLevel.innerText = this.hungerLevel;
         changeImg(this.name, "eating");
@@ -82,6 +85,7 @@ export class Pet {
       this.waterLevel = currentWater + 3;
       if (this.waterLevel > 10) {
         waterLevel.innerText = 10;
+        changeImg(this.name, "eating");
       } else {
         waterLevel.innerText = this.waterLevel;
         changeImg(this.name, "eating");
@@ -100,6 +104,7 @@ export class Pet {
       this.happinessLevel = currentHappiness + 3;
       if (this.happinessLevel > 10) {
         happinessLevel.innerText = 10;
+        changeImg(this.name, "happy");
       } else {
         happinessLevel.innerText = this.happinessLevel;
         changeImg(this.name, "happy");
@@ -113,11 +118,12 @@ export class Pet {
       const notTired = `${this.name} isn't tired!`;
       showText(notTired);
     } else {
-      const sleeping = `Shhh ${this.name} is sleeping!`;
+      const sleeping = `Shhh, ${this.name} is sleeping!`;
       showText(sleeping);
       this.energyLevel = currentEnergy + 3;
       if (this.energyLevel > 10) {
         energyLevel.innerText = 10;
+        changeImg(this.name, "sleeping");
       } else {
         energyLevel.innerText = this.energyLevel;
         changeImg(this.name, "sleeping");

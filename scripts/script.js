@@ -7,7 +7,7 @@ import {
   energyLevel,
 } from "./pet.js";
 
-const errorEl = document.querySelector(".error");
+const errorEl = document.querySelector(".name-form__error");
 const form = document.querySelector(".name-form");
 
 const startGame = (name) => {
@@ -22,6 +22,8 @@ const startGame = (name) => {
     cursor: null,
     delay: 60,
   }).deleteAll();
+
+  healthScore(healthLevels);
 
   const pet = new Pet(name);
 
@@ -67,7 +69,5 @@ const healthScore = (healthLevels) => {
     happinessLevel.innerText = healthLevels[2];
     energyLevel.innerText = healthLevels[3];
     console.log("decrease");
-  }, 5000);
+  }, 7000);
 };
-
-// healthScore(healthLevels);

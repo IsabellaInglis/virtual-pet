@@ -19,14 +19,13 @@
   display: none;
 }
 
-.info__wrapper {
+.info {
   padding: 3rem;
-  margin-left: 2rem;
-}
 
-.info__text {
-  text-align: center;
-  font-size: 18px;
+  &__text {
+    text-align: center;
+    font-size: 18px;
+  }
 }
 
 .game-background {
@@ -153,5 +152,10 @@
     background-color: white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__error {
+    padding-top: 0.5rem;
   }
 }
