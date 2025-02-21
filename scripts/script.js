@@ -10,6 +10,18 @@ import {
 const errorEl = document.querySelector(".name-form__error");
 const form = document.querySelector(".name-form");
 
+const healthScore = (healthLevels) => {
+  setInterval(() => {
+    let i = Math.floor(Math.random() * 4);
+    healthLevels[i] = healthLevels[i] - Math.floor(Math.random() * 3);
+
+    foodLevel.innerText = healthLevels[0];
+    waterLevel.innerText = healthLevels[1];
+    happinessLevel.innerText = healthLevels[2];
+    energyLevel.innerText = healthLevels[3];
+  }, 7000);
+};
+
 const startGame = (name) => {
   const gameEl = document.querySelector("main");
   const landingEl = document.querySelector(".landing");
@@ -57,17 +69,3 @@ form.addEventListener("submit", (event) => {
     startGame(name);
   }
 });
-
-const healthScore = (healthLevels) => {
-  setInterval(() => {
-    let i = Math.floor(Math.random() * 4);
-    console.log(
-      (healthLevels[i] = healthLevels[i] - Math.floor(Math.random() * 3))
-    );
-    foodLevel.innerText = healthLevels[0];
-    waterLevel.innerText = healthLevels[1];
-    happinessLevel.innerText = healthLevels[2];
-    energyLevel.innerText = healthLevels[3];
-    console.log("decrease");
-  }, 7000);
-};

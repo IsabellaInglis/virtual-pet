@@ -47,12 +47,13 @@
 .info__text {
   text-align: center;
   font-size: 18px;
+  padding-left: 0.2rem;
 }
 
 .game-background {
   height: 30.6rem;
   width: 29.5rem;
-  background-image: url("../assets/background/tama-background2.jpg");
+  background-image: url("../assets/background/tama-background.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   padding-left: 9rem;

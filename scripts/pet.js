@@ -1,4 +1,4 @@
-import { getJoke } from "./jokeApi.js";
+import { getJoke } from "../lib/jokeApi.js";
 
 const pet = document.querySelector(".pet__sprite");
 export const healthLevels = [10, 10, 10, 10];
@@ -34,7 +34,7 @@ const changeImg = (name, action) => {
       pet.src = "../assets/gifs/default.gif";
       const text = `${name} loved your joke!`;
       showText(text);
-    }, 3000);
+    }, 5000);
   } else {
     clearTimeout(lastTimeoutId);
     pet.src = `../assets/gifs/${action}.gif`;
@@ -49,14 +49,13 @@ export class Pet {
   constructor(name) {
     this.name = name;
     this.hungerLevel = healthLevels[0];
-    this.waterLevel = healthLevels[1]; // will depend on location
-    this.energyLevel = healthLevels[2]; // will depend on time of day?
+    this.waterLevel = healthLevels[1];
+    this.energyLevel = healthLevels[2];
     this.happinessLevel = healthLevels[3];
   }
 
   eat() {
     let currentHunger = parseInt(foodLevel.innerText);
-    console.log(this);
     if (currentHunger === 10) {
       const notHungry = `${this.name} is not hungry!`;
       showText(notHungry);
@@ -127,7 +126,6 @@ export class Pet {
       } else {
         energyLevel.innerText = this.energyLevel;
         changeImg(this.name, "sleeping");
-        // if night - sleep for longer?
       }
     }
   }
