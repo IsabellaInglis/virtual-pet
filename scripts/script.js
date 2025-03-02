@@ -1,24 +1,16 @@
-import {
-  Pet,
-  initialHealthLevels,
-  hungerLevel,
-  waterLevel,
-  happinessLevel,
-  energyLevel,
-} from "./pet.js";
+import { Pet } from "./pet.js";
 
 const errorEl = document.querySelector(".name-form__error");
 const form = document.querySelector(".name-form");
 
-const healthScore = (healthLevels) => {
+const healthScore = (pet) => {
   setInterval(() => {
-    let i = Math.floor(Math.random() * 4);
-    healthLevels[i] = healthLevels[i] - Math.floor(Math.random() * 3);
+    const healthKeys = Object.keys(pet.levelDisplays);
+    let i = Math.floor(Math.random() * healthKeys.length);
+    const key = healthKeys[i];
+    const decreaseAmount = Math.floor(Math.random() * 3);
 
-    hungerLevel.innerText = healthLevels[0];
-    waterLevel.innerText = healthLevels[1];
-    happinessLevel.innerText = healthLevels[2];
-    energyLevel.innerText = healthLevels[3];
+    pet.decreaseHealth(key, decreaseAmount);
   }, 7000);
 };
 
@@ -35,9 +27,9 @@ const startGame = (name) => {
     delay: 60,
   }).deleteAll();
 
-  healthScore(initialHealthLevels);
-
   const pet = new Pet(name);
+
+  healthScore(pet);
 
   const eatBtn = document.querySelector("#food-btn");
   eatBtn.addEventListener("click", () => {

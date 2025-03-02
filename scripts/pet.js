@@ -83,6 +83,12 @@ export class Pet {
     changeImg(this.name, action);
   }
 
+  decreaseHealth(key, decreaseAmount) {
+    let currentLevel = parseInt(this.levelDisplays[key].innerText);
+    this[key] = Math.max(0, currentLevel - decreaseAmount);
+    this.levelDisplays[key].innerText = this[key];
+  }
+
   eat() {
     this.updateHealth("hunger", "hungry", 3, "eating");
   }
