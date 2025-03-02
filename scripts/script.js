@@ -1,7 +1,7 @@
 import {
   Pet,
-  healthLevels,
-  foodLevel,
+  initialHealthLevels,
+  hungerLevel,
   waterLevel,
   happinessLevel,
   energyLevel,
@@ -15,7 +15,7 @@ const healthScore = (healthLevels) => {
     let i = Math.floor(Math.random() * 4);
     healthLevels[i] = healthLevels[i] - Math.floor(Math.random() * 3);
 
-    foodLevel.innerText = healthLevels[0];
+    hungerLevel.innerText = healthLevels[0];
     waterLevel.innerText = healthLevels[1];
     happinessLevel.innerText = healthLevels[2];
     energyLevel.innerText = healthLevels[3];
@@ -35,7 +35,7 @@ const startGame = (name) => {
     delay: 60,
   }).deleteAll();
 
-  healthScore(healthLevels);
+  healthScore(initialHealthLevels);
 
   const pet = new Pet(name);
 

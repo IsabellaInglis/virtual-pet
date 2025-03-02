@@ -79,6 +79,9 @@
   position: relative;
   right: 3.9rem;
 }
+.pet__container--sleeping {
+  background-color: rgba(159, 159, 159, 0.696);
+}
 .pet__sprite {
   width: 3rem;
 }

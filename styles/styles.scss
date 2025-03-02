@@ -56,6 +56,10 @@
     margin-top: 11rem;
     position: relative;
     right: 3.9rem;
+
+    &--sleeping {
+      background-color: rgba(159, 159, 159, 0.696);
+    }
   }
 
   &__sprite {
