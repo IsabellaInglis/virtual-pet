@@ -1,7 +1,7 @@
 import { getJoke } from "../lib/jokeApi.js";
 
 const pet = document.querySelector(".pet__sprite");
-export const initialHealthLevels = [3, 3, 3, 3];
+export const initialHealthLevels = [10, 10, 10, 10];
 export const hungerLevel = document.querySelector(".pet__food-level");
 export const waterLevel = document.querySelector(".pet__water-level");
 export const happinessLevel = document.querySelector(".pet__happiness-level");
@@ -77,7 +77,6 @@ export class Pet {
     showText(actionText);
 
     this[key] = Math.min(10, currentLevel + changeAmount);
-    console.log(this[key]);
     this.levelDisplays[key].innerText = this[key];
 
     changeImg(this.name, action);

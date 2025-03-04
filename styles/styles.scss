@@ -15,12 +15,60 @@
   display: none;
 }
 
-.landing--hidden {
-  display: none;
+.landing {
+  &--hidden {
+    display: none;
+  }
+
+  &__header {
+    padding: 1rem;
+  }
+  &__text-wrapper {
+    width: 50rem;
+    height: 20rem;
+    margin: 5rem auto 0;
+    background-color: rgba(227, 226, 226, 0.696);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    @media (max-width: 750px) {
+      width: 90vw;
+      height: 15rem;
+    }
+  }
+
+  &__name-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name-form-label {
+    text-align: center;
+  }
+
+  &__name-form-input {
+    width: 20rem;
+  }
+
+  &__name-form-start-btn {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__error {
+    padding-top: 0.5rem;
+  }
 }
 
 .info {
-  padding: 3rem;
+  padding: 2rem;
 
   &__text {
     text-align: center;
@@ -29,20 +77,11 @@
   }
 }
 
-.game-background {
-  height: 30.6rem;
-  width: 29.5rem;
-  background-image: url("../assets/background/tama-background.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-left: 9rem;
-  margin-left: 10rem;
-}
-
 .pet {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   &__container {
     width: 10.2rem;
     height: 9.2rem;
@@ -53,12 +92,45 @@
     align-items: center;
     border-radius: 10px;
     border-style: inset;
-    margin-top: 11rem;
+    margin-top: 1rem;
     position: relative;
     right: 3.9rem;
+    top: 11rem;
+
+    @media (max-width: 750px) {
+      width: 7.6rem;
+      height: 7rem;
+      right: 5.3rem;
+      top: 8rem;
+      margin-top: 0;
+    }
 
     &--sleeping {
       background-color: rgba(159, 159, 159, 0.696);
+    }
+  }
+
+  &__game-container {
+    @media (max-width: 750px) {
+      max-width: 382px;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__game-background {
+    height: 30.6rem;
+    width: 29.5rem;
+    background-image: url("../assets/background/tama-background.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 9rem;
+    margin-left: 10rem;
+
+    @media (max-width: 750px) {
+      height: 22.6rem;
+      margin-left: 4.5rem;
     }
   }
 
@@ -90,77 +162,40 @@
     background-color: rgb(124, 34, 151);
     margin: 3px;
     cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   &__health-container {
     display: flex;
+    justify-content: space-between;
+
     @media (max-width: 1000px) {
-      flex-direction: column;
+      flex-direction: row;
     }
 
-    &--right {
-      margin-right: 3rem;
+    @media (max-width: 750px) {
+      width: 100vw;
+      align-items: center;
+      margin: 0 auto;
     }
+  }
 
-    &--left {
-      margin-left: 3rem;
-    }
+  &__health-levels-pair {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__health-levels {
     margin: 1rem;
     font-size: 18px;
+
+    @media (max-width: 750px) {
+      font-size: 15px;
+    }
   }
 
   &__health-title {
     color: #5357a7;
     font-weight: 600;
-  }
-}
-
-.main-wrapper {
-  display: flex;
-}
-
-.landing {
-  &__header {
-    padding: 1rem;
-  }
-  &__text-wrapper {
-    width: 50rem;
-    height: 20rem;
-    margin: 5rem auto 0;
-    background-color: rgba(227, 226, 226, 0.696);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-  }
-}
-
-.name-form {
-  display: flex;
-  flex-direction: column;
-
-  &__label {
-    text-align: center;
-  }
-
-  &__input {
-    width: 20rem;
-  }
-
-  &__start-btn {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  &__error {
-    padding-top: 0.5rem;
   }
 }

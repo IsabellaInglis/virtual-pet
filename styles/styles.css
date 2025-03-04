@@ -40,24 +40,55 @@
 .landing--hidden {
   display: none;
 }
+.landing__header {
+  padding: 1rem;
+}
+.landing__text-wrapper {
+  width: 50rem;
+  height: 20rem;
+  margin: 5rem auto 0;
+  background-color: rgba(227, 226, 226, 0.696);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+@media (max-width: 750px) {
+  .landing__text-wrapper {
+    width: 90vw;
+    height: 15rem;
+  }
+}
+.landing__name-form {
+  display: flex;
+  flex-direction: column;
+}
+.landing__name-form-label {
+  text-align: center;
+}
+.landing__name-form-input {
+  width: 20rem;
+}
+.landing__name-form-start-btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.landing__error {
+  padding-top: 0.5rem;
+}
 
 .info {
-  padding: 3rem;
+  padding: 2rem;
 }
 .info__text {
   text-align: center;
   font-size: 18px;
   padding-left: 0.2rem;
-}
-
-.game-background {
-  height: 30.6rem;
-  width: 29.5rem;
-  background-image: url("../assets/background/tama-background.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-left: 9rem;
-  margin-left: 10rem;
 }
 
 .pet {
@@ -75,12 +106,45 @@
   align-items: center;
   border-radius: 10px;
   border-style: inset;
-  margin-top: 11rem;
+  margin-top: 1rem;
   position: relative;
   right: 3.9rem;
+  top: 11rem;
+}
+@media (max-width: 750px) {
+  .pet__container {
+    width: 7.6rem;
+    height: 7rem;
+    right: 5.3rem;
+    top: 8rem;
+    margin-top: 0;
+  }
 }
 .pet__container--sleeping {
   background-color: rgba(159, 159, 159, 0.696);
+}
+@media (max-width: 750px) {
+  .pet__game-container {
+    max-width: 382px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+.pet__game-background {
+  height: 30.6rem;
+  width: 29.5rem;
+  background-image: url("../assets/background/tama-background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 9rem;
+  margin-left: 10rem;
+}
+@media (max-width: 750px) {
+  .pet__game-background {
+    height: 22.6rem;
+    margin-left: 4.5rem;
+  }
 }
 .pet__sprite {
   width: 3rem;
@@ -106,67 +170,38 @@
   background-color: rgb(124, 34, 151);
   margin: 3px;
   cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .pet__health-container {
   display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 1000px) {
   .pet__health-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
-.pet__health-container--right {
-  margin-right: 3rem;
+@media (max-width: 750px) {
+  .pet__health-container {
+    width: 100vw;
+    align-items: center;
+    margin: 0 auto;
+  }
 }
-.pet__health-container--left {
-  margin-left: 3rem;
+.pet__health-levels-pair {
+  display: flex;
+  justify-content: space-between;
 }
 .pet__health-levels {
   margin: 1rem;
   font-size: 18px;
 }
+@media (max-width: 750px) {
+  .pet__health-levels {
+    font-size: 15px;
+  }
+}
 .pet__health-title {
   color: #5357a7;
   font-weight: 600;
-}
-
-.main-wrapper {
-  display: flex;
-}
-
-.landing__header {
-  padding: 1rem;
-}
-.landing__text-wrapper {
-  width: 50rem;
-  height: 20rem;
-  margin: 5rem auto 0;
-  background-color: rgba(227, 226, 226, 0.696);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
-.name-form {
-  display: flex;
-  flex-direction: column;
-}
-.name-form__label {
-  text-align: center;
-}
-.name-form__input {
-  width: 20rem;
-}
-.name-form__start-btn {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.name-form__error {
-  padding-top: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */

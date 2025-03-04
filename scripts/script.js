@@ -1,7 +1,7 @@
 import { Pet } from "./pet.js";
 
-const errorEl = document.querySelector(".name-form__error");
-const form = document.querySelector(".name-form");
+const errorEl = document.querySelector(".landing__name-form__error");
+const form = document.querySelector(".landing__name-form");
 
 const healthScore = (pet) => {
   setInterval(() => {

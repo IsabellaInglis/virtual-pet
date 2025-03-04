@@ -19,10 +19,12 @@
     <section class="landing">
       <div class="landing__text-wrapper">
         <h1 class="landing__header">Ready to play?</h1>
-        <form class="name-form">
-          <label class="name-form__label" for="name">Pick a name:</label>
-          <input class="name-form__input" type="text" id="name" />
-          <button class="name-form__start-btn">
+        <form class="landing__name-form">
+          <label class="landing__name-form-label" for="name"
+            >Pick a name:</label
+          >
+          <input class="landing__name-form-input" type="text" id="name" />
+          <button class="landing__name-form-start-btn">
             START
             <a class="name-form__start-link" href="#"></a>
           </button>
@@ -35,34 +37,38 @@
         <p class="info__text"></p>
       </div>
       <section class="pet">
-        <div class="main-wrapper">
-          <div class="pet__health-container pet__health-container--left">
-            <div class="pet__health-levels">
-              <span class="pet__health-title">Food: </span>
-              <div><strong class="pet__food-level">10</strong>/10</div>
+        <div class="pet__wrapper">
+          <div class="pet__health-container">
+            <div class="pet__health-levels-pair">
+              <div class="pet__health-levels">
+                <span class="pet__health-title">Food: </span>
+                <div><strong class="pet__food-level">10</strong>/10</div>
+              </div>
+              <div class="pet__health-levels">
+                <span class="pet__health-title">Hydration:</span>
+                <div><strong class="pet__water-level">10</strong>/10</div>
+              </div>
             </div>
-            <div class="pet__health-levels">
-              <span class="pet__health-title">Hydration:</span>
-              <div><strong class="pet__water-level">10</strong>/10</div>
+            <div class="pet__health-levels-pair">
+              <div class="pet__health-levels">
+                <span class="pet__health-title">Happiness:</span>
+                <div><strong class="pet__happiness-level">10</strong>/10</div>
+              </div>
+              <div class="pet__health-levels">
+                <span class="pet__health-title">Energy:</span>
+                <div><strong class="pet__energy-level">10</strong>/10</div>
+              </div>
             </div>
           </div>
-          <div class="game-background">
-            <div class="pet__container">
-              <img
-                class="pet__sprite"
-                src="./assets/gifs/default.gif"
-                alt="Virtual pet pacing"
-              />
-            </div>
-          </div>
-          <div class="pet__health-container pet__health-container--right">
-            <div class="pet__health-levels">
-              <span class="pet__health-title">Happiness:</span>
-              <div><strong class="pet__happiness-level">10</strong>/10</div>
-            </div>
-            <div class="pet__health-levels">
-              <span class="pet__health-title">Energy:</span>
-              <div><strong class="pet__energy-level">10</strong>/10</div>
+          <div class="pet__game-container">
+            <div class="pet__game-background">
+              <div class="pet__container">
+                <img
+                  class="pet__sprite"
+                  src="./assets/gifs/default.gif"
+                  alt="Virtual pet pacing"
+                />
+              </div>
             </div>
           </div>
         </div>
